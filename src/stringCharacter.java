@@ -7,6 +7,7 @@ public class stringCharacter {
 		System.out.println("Please enter the query..");
 		String inputQuery = scanner1.nextLine();
 		scanner1.close();
+		String finalString = " ";
 		int ctr = 0;
 		inputQuery = inputQuery.trim();
 		boolean flag = false;
@@ -15,6 +16,7 @@ public class stringCharacter {
 			ctr++;
 		if(inputQuery.length() < 5){
 			System.out.println("the input query is less than 5..."+inputQuery);
+			finalString = inputQuery;
 			flag = true;
 		}
 		if(((inputQuery.length())%5) == 0 || flag2 == false)
@@ -28,6 +30,7 @@ public class stringCharacter {
 					c++;
 					a = var;
 					System.out.println("Slashed String is..."+demoString);
+					finalString += demoString;
 				}
 				flag2 = true;
 			}
@@ -36,8 +39,9 @@ public class stringCharacter {
 				int remLength = (inputQuery.length()-((inputQuery.length()%5)+1))+1;
 				remString = inputQuery.substring(remLength , inputQuery.length() );
 				System.out.println("remaining String is..."+remString);
+				finalString += remString;
 			}
-			
+			System.out.println("Final appended String is..."+finalString.trim());
 			
 		}
 	}
